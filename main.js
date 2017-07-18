@@ -2,6 +2,7 @@ let recipeBox = document.querySelector(".recipeContainer")
 let recipes = document.querySelector(".recipeList")
 let content = document.querySelector("#wrapper");
 let button = document.querySelector("#button");
+let search = document.querySelector("#search");
 
 
 fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?q=${search.value}`)
@@ -13,13 +14,12 @@ fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?q=${search.value}`
   })
 
   .then(function(data) {
-    console.log(data);
-    let recipeHTML = "";
     let results = data.results;
     for (var i = 0; i < results.length; i++) {
       recipes.innerHTML += `
     <img src=${results[i].thumbnail}>
-    <h1>${results[i].title}</h1>
+    <a href=${results[i].href}><h1 class="title">${results[i].title}</h1></a>
+
     `
     }
 
