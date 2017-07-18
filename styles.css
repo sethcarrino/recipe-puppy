@@ -1,0 +1,70 @@
+
+
+body{
+  font-family: 'Bourbon', arial, sans-serif;
+  margin: 0 auto;
+  background-color: lightgrey;
+}
+
+
+
+
+a{
+  text-decoration: none;
+  color: darkgrey;
+}
+
+h1{
+  text-align: center;
+
+  color: white;
+}
+
+h2{
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+#wrapper{
+  display: flex;
+  margin: 0 auto;
+}
+
+.searchBox{
+  background-color: #83cfcf;
+  box-shadow: 5px 5px 15px #000000;
+  width: 100%;
+  padding: 1.5em;
+}
+
+.recipeContainer{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.recipeList{
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+
+}
+
+img{
+  width: 300px;
+  height: 300px;
+  box-shadow:5px 5px 3px #000000;
+  border: 3px solid white;
+}
+
+.imageContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  flex-direction: column;
+  text-align: center;
+
+}

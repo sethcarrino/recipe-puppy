@@ -5,7 +5,8 @@ let button = document.querySelector("#button");
 let search = document.querySelector("#search");
 
 
-fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?q=${search.value}`)
+button.addEventListener("click", function(){
+  fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?i=${search.value}`)
 
   .then(function(response) {
     if (response.status === 200) {
@@ -17,8 +18,10 @@ fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?q=${search.value}`
     let results = data.results;
     for (var i = 0; i < results.length; i++) {
       recipes.innerHTML += `
+      <div class="imageContainer">
     <img src=${results[i].thumbnail}>
-    <a href=${results[i].href}><h1 class="title">${results[i].title}</h1></a>
+    <a href=${results[i].href}><h2 class="title">${results[i].title}</h2></a>
+    </div>
 
     `
     }
@@ -31,3 +34,4 @@ fetch(`https://crossorigin.me/http://www.recipepuppy.com/api/?q=${search.value}`
   .catch(function(error) {
     console.error(error.message);
   });
+})
